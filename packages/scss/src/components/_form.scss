@@ -19,12 +19,12 @@
 
 .form {
 	&.mod-framed {
-		.form-group {
+		.form-section {
 			display: flex;
 			flex-direction: column;
 		}
 
-		.form-group-line {
+		.form-section-line {
 			display: flex;
 			flex: 0 1 auto;
 			flex-direction: row;
@@ -41,7 +41,7 @@
 			}
 		}
 
-		.form-group-line-label {
+		.form-section-line-label {
 			color: _color("text.light");
 			font-size: _theme("sizes.small.font-size");
 			left: _component("textfield.framed.side-padding");
@@ -54,7 +54,7 @@
 		// Form group grid system
 		@each $bp-name, $bp-obj in $breakpoints {
 			@for $i from 1 through 12 {
-				.form-group-line-#{$bp-name}#{$i} {
+				.form-section-line-#{$bp-name}#{$i} {
 					flex: 0 0 auto;
 					flex-basis: 100%;
 					max-width: 100%;
@@ -63,14 +63,14 @@
 			}
 
 			@include media_larger_than($bp-name) {
-				.form-group-line-#{$bp-name} {
+				.form-section-line-#{$bp-name} {
 					flex-basis: 0;
 					flex-grow: 1;
 					max-width: 100%;
 				}
 
 				@for $i from 1 through 12 {
-					.form-group-line-#{$bp-name}#{$i} {
+					.form-section-line-#{$bp-name}#{$i} {
 						flex-basis: percentage($i / 12);
 						max-width: percentage($i / 12);
 					}
