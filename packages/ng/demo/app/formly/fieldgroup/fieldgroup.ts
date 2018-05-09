@@ -11,13 +11,13 @@ export class FieldgroupComponent {
 	form: FormGroup = new FormGroup({});
 	userFields = [
 		{
-			className: 'form-group',
+			className: 'form-section',
 			fieldGroup: [
 				{
-					className: 'form-group-line',
+					className: 'form-section-line',
 					fieldGroup: [
 						{
-							className: 'form-group-line-md6',
+							className: 'form-section-line-md6',
 							key: 'firstName',
 							type: 'input',
 							templateOptions: {
@@ -27,7 +27,7 @@ export class FieldgroupComponent {
 							},
 						},
 						{
-							className: 'form-group-line-md6',
+							className: 'form-section-line-md6',
 							key: 'lastName',
 							type: 'input',
 							templateOptions: {
@@ -40,10 +40,10 @@ export class FieldgroupComponent {
 					templateOptions: {},
 				},
 				{
-					className: 'form-group-line',
+					className: 'form-section-line',
 					fieldGroup: [
 						{
-							className: 'form-group-line-md2',
+							className: 'form-section-line-md2',
 							key: 'buildingNumber',
 							type: 'input',
 							templateOptions: {
@@ -53,7 +53,7 @@ export class FieldgroupComponent {
 							},
 						},
 						{
-							className: 'form-group-line-md10',
+							className: 'form-section-line-md10',
 							key: 'streetName',
 							type: 'input',
 							templateOptions: {
@@ -78,13 +78,31 @@ export class FieldgroupComponent {
 					],
 					templateOptions: {},
 				},
+				{
+					fieldGroup: [
+						{
+							key: 'Radio',
+							type: 'radio',
+							templateOptions: {
+								label: 'Radio Choices',
+								mod: 'mod-framed',
+								options: [
+									{ id: 0, name: 'female' },
+									{ id: 1, name: 'male' },
+									{ id: 2, name: 'other' },
+								]
+							},
+						},
+					],
+					templateOptions: {},
+				},
 			],
 			templateOptions: {
 				title: 'section 1',
 			},
 		},
 		{
-			className: 'form-group',
+			className: 'form-section',
 			templateOptions: {
 				title: 'section 2',
 				mod: 'mod-framed',

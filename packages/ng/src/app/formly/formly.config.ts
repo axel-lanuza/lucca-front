@@ -6,6 +6,7 @@ import { LuFormlyFieldTextarea } from './types/textarea';
 import { LuFormlyFieldAutocomplete } from './types/autocomplete';
 import { LuFormlyFieldSelect } from './types/select';
 import { LuFormlyFieldUser } from './types/user';
+import { LuFormlyFieldRadio } from './types/radio';
 // wrappers
 import { LuFormlyWrapperHelper, TemplateHelper } from './wrappers/helper';
 import { LuFormlyWrapperTitle, TemplateTitle } from './wrappers/title';
@@ -29,6 +30,7 @@ export const LU_FORMLY_COMPONENTS = [
 	LuFormlyFieldAutocomplete,
 	LuFormlyFieldSelect,
 	LuFormlyFieldUser,
+	LuFormlyFieldRadio,
 
 	LuFormlyWrapperHelper,
 	LuFormlyWrapperLabel,
@@ -70,6 +72,11 @@ export const LU_FORMLY_CONFIG = {
 		{
 			name: 'user',
 			component: LuFormlyFieldUser,
+			wrappers: ['textfield-layout'],
+		},
+		{
+			name: 'radio',
+			component: LuFormlyFieldRadio,
 			wrappers: ['textfield-layout'],
 		},
 	],
