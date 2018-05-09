@@ -81,15 +81,15 @@ export class FieldgroupComponent {
 				{
 					fieldGroup: [
 						{
-							key: 'Radio',
+							key: 'radio',
 							type: 'radio',
 							templateOptions: {
 								label: 'Radio Choices',
 								mod: 'mod-framed',
 								options: [
-									{ id: 0, name: 'female' },
-									{ id: 1, name: 'male' },
-									{ id: 2, name: 'other' },
+									{ id: 0, value: 'female' },
+									{ id: 1, value: 'male' },
+									{ id: 2, value: 'other' },
 								]
 							},
 						},

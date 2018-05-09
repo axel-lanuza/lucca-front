@@ -1,4 +1,12 @@
-<div class="radio" *ngFor="let option of _options">
-	<input type="radio">
-	<label for="">{{option.name}}</label>
+<div class="radio">
+	<label *ngFor="let option of _options; let i=index">
+		<input
+		type="radio"
+		[name]="id"
+		[id]="id + '_' + i"
+		[value]="option.value"
+		[formControl]="formControl"
+		[formlyAttributes]="field">
+		{{option.value}}
+	</label>
 </div>

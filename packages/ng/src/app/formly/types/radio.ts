@@ -5,4 +5,7 @@ import { FieldType } from '@ngx-formly/core';
 	templateUrl: './radio.html',
 })
 export class LuFormlyFieldRadio extends FieldType {
+	get _options() {
+		return <any[]>this.to.options || [];
+	}
 }

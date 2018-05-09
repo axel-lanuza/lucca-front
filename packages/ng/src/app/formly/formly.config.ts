@@ -20,6 +20,7 @@ import {
 	LuFormlyErrorMessage,
 } from './wrappers/error';
 import { LuFormlyWrapperButton, TemplateButton } from './wrappers/button';
+import { LuFormlyWrapperRadioCheckboxLayout } from './wrappers/radio-checkbox-layout';
 
 export const LU_FORMLY_COMPONENTS = [
 	LuFormlyErrorMessage,
@@ -35,6 +36,7 @@ export const LU_FORMLY_COMPONENTS = [
 	LuFormlyWrapperHelper,
 	LuFormlyWrapperLabel,
 	LuFormlyWrapperTextfieldLayout,
+	LuFormlyWrapperRadioCheckboxLayout,
 	LuFormlyWrapperSuffix,
 	LuFormlyWrapperIcon,
 	LuFormlyWrapperError,
@@ -77,7 +79,7 @@ export const LU_FORMLY_CONFIG = {
 		{
 			name: 'radio',
 			component: LuFormlyFieldRadio,
-			wrappers: ['textfield-layout'],
+			wrappers: ['radio-checkbox-layout'],
 		},
 	],
 	wrappers: [
@@ -85,6 +87,7 @@ export const LU_FORMLY_CONFIG = {
 		// { name: 'label', component: LuFormlyWrapperLabel }, // label added to templates for technical reasons
 		{ name: 'helper', component: LuFormlyWrapperHelper },
 		{ name: 'textfield-layout', component: LuFormlyWrapperTextfieldLayout },
+		{ name: 'radio-checkbox-layout', component: LuFormlyWrapperRadioCheckboxLayout },
 		{ name: 'suffix', component: LuFormlyWrapperSuffix },
 		{ name: 'icon', component: LuFormlyWrapperIcon },
 		{ name: 'error', component: LuFormlyWrapperError },
