@@ -11,16 +11,16 @@ export class OptionComponent {
 	form: FormGroup = new FormGroup({});
 	userFields = [
 		{
-			className: 'form-group',
+			className: 'form-section',
 			templateOptions: {
 				title: 'label, placeholder, helper, suffix',
 			},
 			fieldGroup: [
 				{
-					className: 'form-group-line',
+					className: 'form-section-line',
 					fieldGroup: [
 						{
-							className: 'form-group-line-md6',
+							className: 'form-section-line-md6',
 							key: 'label',
 							type: 'input',
 							templateOptions: {
@@ -29,7 +29,7 @@ export class OptionComponent {
 							},
 						},
 						{
-							className: 'form-group-line-md6',
+							className: 'form-section-line-md6',
 							key: 'placeholder',
 							type: 'input',
 							templateOptions: {
@@ -50,10 +50,10 @@ export class OptionComponent {
 					},
 				},
 				{
-					className: 'form-group-line',
+					className: 'form-section-line',
 					fieldGroup: [
 						{
-							className: 'form-group-line-md6',
+							className: 'form-section-line-md6',
 							key: 'icon',
 							type: 'input',
 							templateOptions: {
@@ -63,7 +63,7 @@ export class OptionComponent {
 							},
 						},
 						{
-							className: 'form-group-line-md6',
+							className: 'form-section-line-md6',
 							key: 'suffix',
 							type: 'input',
 							templateOptions: {
@@ -77,13 +77,13 @@ export class OptionComponent {
 			],
 		},
 		{
-			className: 'form-group',
+			className: 'form-section',
 			fieldGroup: [
 				{
-					className: 'form-group-line',
+					className: 'form-section-line',
 					fieldGroup: [
 						{
-							className: 'form-group-line-md6',
+							className: 'form-section-line-md6',
 							key: 'firstName',
 							type: 'input',
 							templateOptions: {
@@ -92,7 +92,7 @@ export class OptionComponent {
 							},
 						},
 						{
-							className: 'form-group-line-md6',
+							className: 'form-section-line-md6',
 							key: 'lastName',
 							type: 'input',
 							templateOptions: {
