@@ -1,0 +1,78 @@
+.form-element {
+	@extend %input-wrapper;
+
+	&.mod-framed {
+		@extend %form-element-framed;
+	}
+	&.mod-compact {
+		@extend %form-element-compact;
+	}
+}
+
+.form-element-label {
+	@extend %input-wrapper-label;
+}
+
+.form-element-messages {
+	@extend %input-wrapper-messages;
+}
+
+.form-element-messages-error {
+	@extend %input-wrapper-messages-error;
+}
+
+.form-element-messages-warning {
+	@extend %input-wrapper-messages-warning;
+}
+
+.form-element-messages-helper {
+	@extend %input-wrapper-messages-helper;
+}
+
+// PALETTE
+// ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒
+
+.form-element {
+
+	@mixin inputColoring($palette) {
+		// Needed when not next to input (formly)
+		&.is-focused {
+			.form-element-label {
+				color: _color("text.default");
+			}
+		}
+	}
+
+	// palette colors
+	@each $name, $palette in _palettes() {
+		&.palette-#{$name} {
+			@include inputColoring($palette);
+		}
+	}
+}
+
+
+.form-element {
+	/* Width */
+	@each $textfield-size-name, $textfield-width in _component("textfield.sizes") {
+		&.mod-#{$textfield-size-name} {
+			width: $textfield-width;
+		}
+	}
+}
+
+// STATES
+// ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒
+
+.form-element.is-required {
+	.form-element-label{
+		&::after {
+			@extend %isRequired;
+		}
+	}
+}
+
+@import 
+	'../common/common',
+	'form-element.compact',
+	'form-element.framed';

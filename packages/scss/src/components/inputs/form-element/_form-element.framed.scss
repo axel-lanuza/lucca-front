@@ -1,0 +1,37 @@
+%form-element-framed {
+	max-width: none;
+	padding: _component("textfield.framed.top-padding") _component("textfield.framed.side-padding") _component("textfield.framed.bottom-padding");
+	@include fakeBorder(1px, _theme("commons.divider.color"));
+	width: 100%;
+	flex-direction: row;
+	flex-wrap: wrap;
+
+	.form-element-label {
+		@extend %input-wrapper-label-framed;
+	}
+	.form-element-messages {
+		@extend %input-wrapper-messages-framed;
+	}
+
+	.form-element-messages-error {
+		@extend %input-wrapper-messages-error-framed;
+	}
+
+	.form-element-messages-warning {
+		@extend %input-wrapper-messages-warning-framed;
+	}
+
+	.form-element-messages-helper {
+		@extend %input-wrapper-messages-helper-framed;
+	}
+
+	// Needed when not next to input-field (formly)
+	&.is-error {
+		@include textfieldFramedError();
+		.form-element-label {
+			color: _color("error") !important;
+		}
+	}
+}
+
+@import "../common/common.framed";

@@ -1,0 +1,59 @@
+%input-wrapper {
+	display: flex;
+	flex-direction: column;
+	position: relative;
+	width: _component("textfield.sizes.default");
+
+	// MODS
+	// ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒
+	/* Width */
+
+	@each $textfield-size-name, $textfield-width in _component("textfield.sizes") {
+		&.mod-#{$textfield-size-name} {
+			width: $textfield-width;
+		}
+	}
+
+	/* Display */
+
+	&.mod-inline {
+		display: inline-flex;
+		margin-left: .15rem;
+		margin-right: .15rem;
+	}
+
+	&.mod-block {
+		width: 100%;
+	}
+}
+
+%input-wrapper-label {
+	color: _color("text.default");
+	font-weight: 600;
+	font-size: _component("textfield.label.font-size");
+	order: -1;
+	overflow: hidden;
+	position: relative;
+	text-overflow: ellipsis;
+	transition: all 150ms ease;
+	word-break: break-word;
+	white-space: nowrap;
+}
+
+%input-wrapper-messages {
+	font-size: _component("textfield.message.font-size");
+	line-height: 1.3;
+	margin-top: .35rem;
+}
+
+%input-wrapper-messages-error {
+	color: _color("error");
+}
+
+%input-wrapper-messages-warning {
+	color: _color("warning");
+}
+
+%input-wrapper-messages-helper {
+	color: _color("text.light");
+}

@@ -1,23 +1,18 @@
-%input_compact {
-	%input-wrapper-compact
+%form-element-compact {
+	@extend  %input-wrapper-compact;
 
-	.textfield-label {
+	.form-element-label {
 		@extend %input-wrapper-label-compact;
 	}
 
-	.textfield-messages {
+	.form-element-messages {
 		@extend %input-wrapper-messages-compact;
 	}
 
-	.textfield-options {
-		right: 0;
-		left: auto;
-		width: calc(100% - #{_component("textfield.compact.label.right-margin")} - #{_component("textfield.compact.label.sizes.default")});
-	}
-
-	.textfield-suffix {
-		top: _component("textfield.compact.padding");
-		right: _component("textfield.compact.padding");
+	&.is-error {
+		.form-element-label {
+			color: _color("error");
+		}
 	}
 
 	// MODS
@@ -36,9 +31,6 @@
 	@each $input-size-name, $input-width in _component("textfield.sizes") {
 		&.mod-#{$input-size-name} {
 			@include inputWidth($input-width, _component("textfield.compact.label.sizes.default"));
-			.textfield-options {
-				width: $input-width;
-			}
 			@each $label-size-name, $label-width in _component("textfield.compact.label.sizes") {
 				&.mod-label-#{$label-size-name} {
 					@include inputWidth($input-width, $label-width);
@@ -49,37 +41,13 @@
 
 	@each $label-size-name, $label-width in _component("textfield.sizes") {
 		&.mod-label-#{$label-size-name} {
-			.textfield-label {
+			.form-element-label {
 				width: $label-width;
 			}
 
-			.textfield-messages.mod-helper {
+			.form-element-messages.mod-helper {
 				padding-left: calc($label-width + #{_component("textfield.compact.label.right-margin")});
 			}
-		}
-	}
-
-	/* Display */
-
-	&.mod-block {
-		width: 100%;
-	}
-
-	// STATES
-	// ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒
-
-	// Disabled & readonly
-	.textfield-input {
-		&.is-error {
-			~ .textfield-label {
-				color: _color("error");
-			}
-		}
-	}
-
-	&.is-error {
-		.textfield-label {
-			color: _color("error");
 		}
 	}
 }
