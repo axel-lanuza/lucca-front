@@ -1,12 +1,7 @@
-<div class="radio">
-	<label *ngFor="let option of _options; let i=index">
-		<input
-		type="radio"
-		[name]="id"
-		[id]="id + '_' + i"
-		[value]="option.value"
-		[formControl]="formControl"
-		[formlyAttributes]="field">
+<div class="radio" *ngFor="let option of _options; let i=index">
+	<input class="radio-input" type="radio" [name]="id" [id]="id + '_' + i" [value]="option.value" [formControl]="formControl" [formlyAttributes]="field">
+	<label class="radio-label" [attr.for]="id + '_' + i">
 		{{option.value}}
 	</label>
 </div>
+<label [attr.for]="id" class="form-element-label">{{to.label}}</label>
